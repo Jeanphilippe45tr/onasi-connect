@@ -28,7 +28,7 @@ import heroSchool from "@/assets/hero-school.jpg";           // Image principale
 import studentsClassroom from "@/assets/students-classroom.jpg"; // Image slider 2
 import eventCultural from "@/assets/event-cultural.jpg";     // Image slider 3
 import schoolBuilding from "@/assets/school-building.jpg";   // Image slider 4
-import proviseurImg from "@/assets/proviseur.jpg";           // Photo du proviseur
+import proviseurImg from "@/assets/principal.jpeg";           // Photo du proviseur
 /* ====================================== */
 
 /** Images du slider héro - AJOUTER/SUPPRIMER des images ici */
@@ -251,7 +251,7 @@ const Index = () => {
                 </p>
               </blockquote>
               {/* REMPLACER par le vrai nom du proviseur */}
-              <p className="mt-6 font-heading font-bold text-foreground">M. / Mme XXXX</p>
+              <p className="mt-6 font-heading font-bold text-foreground">M. / Mme Onana Messi Blaise</p>
               <p className="text-sm text-muted-foreground">Proviseur du Collège ONASI</p>
               <Link to="/a-propos" className="inline-block mt-4">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
@@ -359,7 +359,7 @@ const Index = () => {
               4. Copiez le lien src="" et collez-le ci-dessous
             */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63828.45!2d11.13!3d2.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108981e7b95ab9c7%3A0x8b3ebc5c93e72f8a!2sEbolowa%2C%20Cameroon!5e0!3m2!1sfr!2sfr!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.9502447158525!2d11.141782175867244!3d2.830635155026182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105f3f9f455babbb%3A0x787d025de67e17da!2sOnasi%20Bilingual%20College!5e0!3m2!1sfr!2scm!4v1772758271952!5m2!1sfr!2scm"
               width="100%"
               height="400"
               style={{ border: 0 }}

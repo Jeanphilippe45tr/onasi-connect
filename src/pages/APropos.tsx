@@ -14,7 +14,7 @@ import SectionTitle from "@/components/SectionTitle";
 
 /* ========= IMAGES À REMPLACER ========= */
 import schoolBuilding from "@/assets/school-building.jpg";
-import proviseurImg from "@/assets/proviseur.jpg";
+import proviseurImg from "@/assets/principal.jpeg";
 import heroSchool from "@/assets/hero-school.jpg";
 /* ====================================== */
 
@@ -30,7 +30,7 @@ const valeurs = [
 
 /** Organigramme - MODIFIER avec les vrais noms et postes */
 const organigramme = [
-  { nom: "M. / Mme XXXX", poste: "Proviseur", level: "primary" },
+  { nom: "M. / Mme Onana Messi Blaise", poste: "Proviseur", level: "primary" },
   { nom: "M. / Mme XXXX", poste: "Censeur Francophone", level: "secondary" },
   { nom: "M. / Mme XXXX", poste: "Vice-Principal (Anglophone)", level: "secondary" },
   { nom: "M. / Mme XXXX", poste: "Surveillant(e) Général(e)", level: "tertiary" },
@@ -164,7 +164,7 @@ const APropos = () => {
                   d'un talent unique qu'il nous revient de révéler et de cultiver. »
                 </p>
               </div>
-              <p className="mt-6 font-heading font-bold text-foreground">M. / Mme XXXX</p>
+              <p className="mt-6 font-heading font-bold text-foreground">M. / Mme Onana Messi Blaise</p>
               <p className="text-sm text-muted-foreground">Proviseur du Collège ONASI</p>
             </div>
           </div>
