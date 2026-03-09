@@ -95,6 +95,10 @@ const documents = [
   { nom: "Règlement intérieur", type: "PDF", url: "#" },
   { nom: "Liste des fournitures scolaires", type: "PDF", url: "#" },
   { nom: "Formulaire d'inscription", type: "PDF", url: "#" },
+  { nom: "Programme des cours - Section Francophone", type: "PDF", url: "#" },
+  { nom: "Programme des cours - Anglophone Section", type: "PDF", url: "#" },
+  { nom: "Grille tarifaire et frais de scolarité", type: "PDF", url: "#" },
+  { nom: "Résultats BEPC & GCE 2025", type: "PDF", url: "#" },
 ];
 
 const categorieColors: Record<string, string> = {
