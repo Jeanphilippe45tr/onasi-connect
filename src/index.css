@@ -6,8 +6,7 @@
 
 /* ===========================================
    DESIGN SYSTEM - Collège ONASI Ebolowa
-   Couleurs inspirées du drapeau camerounais
-   (vert, rouge, jaune) avec une touche moderne.
+   Thème Violet & Blanc - Élégance moderne.
    
    Pour changer les couleurs : modifier les valeurs HSL ci-dessous.
    =========================================== */
@@ -15,84 +14,84 @@
 @layer base {
   :root {
     /* --- Couleurs principales --- */
-    --background: 40 30% 97%;       /* Fond crème chaleureux */
-    --foreground: 150 30% 12%;      /* Texte vert très foncé */
+    --background: 270 20% 98%;       /* Fond blanc légèrement violacé */
+    --foreground: 270 40% 12%;       /* Texte violet très foncé */
 
     --card: 0 0% 100%;
-    --card-foreground: 150 30% 12%;
+    --card-foreground: 270 40% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 150 30% 12%;
+    --popover-foreground: 270 40% 12%;
 
-    /* Vert ONASI - couleur principale */
-    --primary: 145 55% 28%;
+    /* Violet ONASI - couleur principale */
+    --primary: 265 55% 40%;
     --primary-foreground: 0 0% 100%;
 
-    /* Jaune doré - accent secondaire */
-    --secondary: 42 90% 55%;
-    --secondary-foreground: 150 30% 12%;
+    /* Violet clair - accent secondaire */
+    --secondary: 275 45% 65%;
+    --secondary-foreground: 0 0% 100%;
 
     /* Surfaces atténuées */
-    --muted: 40 20% 93%;
-    --muted-foreground: 150 10% 45%;
+    --muted: 270 15% 93%;
+    --muted-foreground: 270 10% 45%;
 
-    /* Rouge camerounais - accent */
-    --accent: 0 72% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Or doré - accent */
+    --accent: 42 85% 52%;
+    --accent-foreground: 270 40% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 145 55% 28%;
+    --border: 270 10% 90%;
+    --input: 270 10% 90%;
+    --ring: 265 55% 40%;
 
     --radius: 0.75rem;
 
     /* Couleurs spéciales */
-    --hero-overlay: 145 55% 15%;
-    --gold: 42 90% 55%;
-    --green-light: 145 40% 92%;
-    --green-dark: 145 55% 20%;
+    --hero-overlay: 265 55% 18%;
+    --gold: 42 85% 52%;
+    --green-light: 270 30% 94%;
+    --green-dark: 265 55% 25%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 145 55% 28%;
+    --sidebar-foreground: 270 20% 26%;
+    --sidebar-primary: 265 55% 40%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 145 20% 95%;
-    --sidebar-accent-foreground: 145 55% 20%;
-    --sidebar-border: 40 15% 88%;
-    --sidebar-ring: 145 55% 28%;
+    --sidebar-accent: 270 20% 95%;
+    --sidebar-accent-foreground: 265 55% 25%;
+    --sidebar-border: 270 10% 90%;
+    --sidebar-ring: 265 55% 40%;
   }
 
   .dark {
-    --background: 150 20% 8%;
-    --foreground: 40 20% 95%;
-    --card: 150 20% 12%;
-    --card-foreground: 40 20% 95%;
-    --popover: 150 20% 12%;
-    --popover-foreground: 40 20% 95%;
-    --primary: 145 55% 40%;
+    --background: 270 20% 8%;
+    --foreground: 270 10% 95%;
+    --card: 270 20% 12%;
+    --card-foreground: 270 10% 95%;
+    --popover: 270 20% 12%;
+    --popover-foreground: 270 10% 95%;
+    --primary: 265 55% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 42 80% 50%;
-    --secondary-foreground: 150 30% 12%;
-    --muted: 150 15% 18%;
-    --muted-foreground: 40 10% 60%;
-    --accent: 0 65% 55%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 275 45% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 15% 18%;
+    --muted-foreground: 270 10% 60%;
+    --accent: 42 80% 50%;
+    --accent-foreground: 270 40% 12%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 150 15% 20%;
-    --input: 150 15% 20%;
-    --ring: 145 55% 40%;
-    --sidebar-background: 150 20% 10%;
-    --sidebar-foreground: 40 20% 90%;
-    --sidebar-primary: 145 55% 40%;
+    --border: 270 15% 20%;
+    --input: 270 15% 20%;
+    --ring: 265 55% 55%;
+    --sidebar-background: 270 20% 10%;
+    --sidebar-foreground: 270 10% 90%;
+    --sidebar-primary: 265 55% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 150 15% 15%;
-    --sidebar-accent-foreground: 40 20% 90%;
-    --sidebar-border: 150 15% 20%;
-    --sidebar-ring: 145 55% 40%;
+    --sidebar-accent: 270 15% 15%;
+    --sidebar-accent-foreground: 270 10% 90%;
+    --sidebar-border: 270 15% 20%;
+    --sidebar-ring: 265 55% 55%;
   }
 }
 
