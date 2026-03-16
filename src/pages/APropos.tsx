@@ -13,9 +13,10 @@ import PageBanner from "@/components/PageBanner";
 import SectionTitle from "@/components/SectionTitle";
 
 /* ========= IMAGES À REMPLACER ========= */
-import schoolBuilding from "@/assets/school-building.jpg";
-import proviseurImg from "@/assets/principal.jpeg";
-import heroSchool from "@/assets/hero-school.jpg";
+import schoolBuilding from "@/assets/vue-lateral.jpg";
+import proviseurImg from "@/assets/principal2.jpg";
+import heroSchool from "@/assets/école-haut.jpg";
+import principal from "@/assets/principal.jpeg";
 /* ====================================== */
 
 /** Valeurs de l'établissement - MODIFIER selon vos valeurs */

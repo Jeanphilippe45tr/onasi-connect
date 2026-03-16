@@ -55,8 +55,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-foreground">Téléphone</h4>
-                  <a href="tel:+237600000000" className="text-sm text-muted-foreground hover:text-primary">
-                    +237 6XX XXX XXX
+                  <a href="tel:+237674341867" className="text-sm text-muted-foreground hover:text-primary">
+                    +237 674 341 867
                   </a>
                   <br />
                   <a href="tel:+237600000001" className="text-sm text-muted-foreground hover:text-primary">
@@ -99,7 +99,7 @@ const Contact = () => {
                   <h4 className="font-heading font-bold text-foreground">WhatsApp</h4>
                   {/* REMPLACER 237600000000 par le vrai numéro */}
                   <a
-                    href="https://wa.me/237600000000?text=Bonjour, je souhaite avoir des informations sur le Collège ONASI."
+                    href="https://wa.me/237674341867?text=Bonjour, je souhaite avoir des informations sur le Collège ONASI."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-muted-foreground hover:text-primary"

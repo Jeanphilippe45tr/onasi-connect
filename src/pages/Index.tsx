@@ -24,11 +24,17 @@ import SectionTitle from "@/components/SectionTitle";
 
 /* ========= IMAGES À REMPLACER ========= */
 // Pour changer une image : remplacer le fichier dans src/assets/ ou modifier le chemin d'import
-import heroSchool from "@/assets/hero-school.jpg";           // Image principale du slider
-import studentsClassroom from "@/assets/students-classroom.jpg"; // Image slider 2
-import eventCultural from "@/assets/event-cultural.jpg";     // Image slider 3
-import schoolBuilding from "@/assets/school-building.jpg";   // Image slider 4
-import proviseurImg from "@/assets/principal.jpeg";           // Photo du proviseur
+import heroSchool from "@/assets/école-haut.jpg";           // Image principale du slider
+import studentsClassroom from "@/assets/vue-lateral.jpg"; // Image slider 2
+import eventCultural from "@/assets/court.jpg";     // Image slider 3
+import schoolBuilding from "@/assets/vue-lateral.jpg";   // Image slider 4
+import proviseurImg from "@/assets/principal.jpeg";          // Photo du proviseur
+import principalImg from "@/assets/principal2.jpg";        // Photo du proviseur
+import staffImg from "@/assets/staff.jpg";    //image des staff
+
+
+
+
 /* ====================================== */
 
 /** Images du slider héro - AJOUTER/SUPPRIMER des images ici */
@@ -228,7 +234,7 @@ const Index = () => {
             >
               {/* Photo du proviseur - REMPLACER l'import proviseurImg */}
               <img
-                src={proviseurImg}
+                src={principalImg}
                 alt="Le Proviseur du Collège ONASI"
                 className="rounded-2xl shadow-xl w-full max-w-md mx-auto"
               />

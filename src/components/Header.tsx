@@ -32,10 +32,10 @@ const Header = () => {
       <div className="bg-primary">
         <div className="container flex items-center justify-between py-1.5 text-sm text-primary-foreground">
           <span className="hidden sm:inline">🎓 Établissement bilingue d'excellence — Ebolowa, Cameroun</span>
-          <a href="tel:+237600000000" className="flex items-center gap-1 hover:opacity-80">
+          <a href="tel:+237674341867" className="flex items-center gap-1 hover:opacity-80">
             <Phone className="h-3 w-3" />
             {/* REMPLACER par le vrai numéro */}
-            +237 6XX XXX XXX
+            +237 674 341 867
           </a>
         </div>
       </div>

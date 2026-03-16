@@ -80,7 +80,7 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0" />
                 {/* REMPLACER par le vrai numéro */}
-                <a href="tel:+237600000000" className="hover:text-primary-foreground">+237 6XX XXX XXX</a>
+                <a href="tel:+237674341867" className="hover:text-primary-foreground">+237 674 341 -867</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0" />
