@@ -130,9 +130,8 @@ const Index = () => {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
           >
             {/* Image de fond - REMPLACER les images dans les imports ci-dessus */}
             <img
@@ -251,9 +250,30 @@ const Index = () => {
                   bilingue est un lieu où l'excellence académique rencontre les valeurs humaines.
                 </p>
                 <p>
-                  Depuis notre création, nous nous engageons à offrir un enseignement de qualité,
-                  tant en français qu'en anglais, préparant nos élèves à devenir des citoyens
-                  accomplis et compétitifs sur le plan national et international. »
+                  Le Collège Bilingue ONASI, situé dans la ville d’Ebolowa (Cameroun), a été fondé avec <br />
+                  la vision selon laquelle l’excellence n’est pas une option. C’est une obligation.
+
+                  Nous croyons sincèrement que, parce que votre enfant mérite mieux, il fallait lui offrir <br />
+                  une institution sérieuse qui construit son avenir.
+
+                  Chers parents, vous qui avez choisi de dire :
+                  « Stop aux écoles ordinaires », pour répondre à vos attentes, le Collège Bilingue ONASI dispose : <br />
+                  
+                  - d’une section francophone (de la 6e en Tle) <br />
+                  - d’une section anglophone premium (Form 1 à Upper 6)
+
+                  • Laboratoire moderne<br />
+                  • Approche pratique et expérimentale <br />
+                  • Encadrement par des professeurs expatriés américains <br />
+                  • Ici, la science ne s’apprend pas seulement, elle se pratique <br />
+
+                  Un environnement qui inspire la réussite :<br />
+                  • Espaces verts aménagés<br />
+                  • Discipline ferme et structurée<br />
+                  • Suivi pédagogique personnalisé<br />
+                  • Effectifs contrôlés<br />
+
+                  15 diplômes aux examens officiels (2013 - 2025)
                 </p>
               </blockquote>
               {/* REMPLACER par le vrai nom du proviseur */}

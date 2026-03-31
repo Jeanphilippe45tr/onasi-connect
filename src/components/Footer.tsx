@@ -43,6 +43,7 @@ const Footer = () => {
                 { to: "/a-propos", label: "À propos" },
                 { to: "/formations", label: "Nos formations" },
                 { to: "/actualites", label: "Actualités" },
+                { to: "/reglement-interieur", label: "Règlement intérieur" },
                 { to: "/inscription", label: "Inscription" },
                 { to: "/contact", label: "Contact" },
               ].map((link) => (
