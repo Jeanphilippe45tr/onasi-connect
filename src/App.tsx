@@ -16,6 +16,7 @@ import Actualites from "./pages/Actualites";
 import Evenements from "./pages/Evenements";
 import Inscription from "./pages/Inscription";
 import Contact from "./pages/Contact";
+import ReglementInterieur from "./pages/ReglementInterieur";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/formations" element={<Formations />} />
             <Route path="/actualites" element={<Actualites />} />
             <Route path="/evenements" element={<Evenements />} />
+            <Route path="/reglement-interieur" element={<ReglementInterieur />} />
             <Route path="/inscription" element={<Inscription />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

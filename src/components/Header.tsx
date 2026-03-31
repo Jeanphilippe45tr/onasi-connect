@@ -18,6 +18,7 @@ const navLinks = [
   { to: "/formations", label: "Formations" },
   { to: "/actualites", label: "Actualités" },
   { to: "/evenements", label: "Événements" },
+  { to: "/reglement-interieur", label: "Règlement intérieur" },
   { to: "/inscription", label: "Inscription" },
   { to: "/contact", label: "Contact" },
 ];
