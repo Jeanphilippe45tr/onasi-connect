@@ -3,140 +3,265 @@
  *
  * POUR MODIFIER CETTE PAGE :
  * - Changer l'image de banniere : remplacer `schoolBuilding`
- * - Changer le texte d'introduction : modifier la section "Cadre general"
- * - Ajouter / supprimer des principes : modifier le tableau `principes`
- * - Ajouter / supprimer des categories de regles : modifier le tableau `regles`
- * - Ajouter des sanctions ou encouragements : modifier `sanctionsEtEncouragements`
- * - Remplacer le contenu generique par le vrai reglement officiel : modifier les textes directement
- *
- * ASTUCE :
- * - Si tu veux ajouter une nouvelle grande section visuelle, duplique un bloc `<section>`
- * - Si tu veux ajouter une simple regle dans une categorie existante, ajoute une ligne dans `points`
+ * - Modifier le preambule : ajuster `preambule`
+ * - Modifier les cartes de synthese : ajuster `principes`
+ * - Modifier les articles officiels : ajuster le tableau `articles`
+ * - Ajouter un nouvel article : dupliquer un objet dans `articles`
  */
 import { motion } from "framer-motion";
-import { BookCheck, ShieldCheck, Clock3, Users, CircleAlert, BadgeCheck } from "lucide-react";
+import { BookCheck, ShieldCheck, Clock3, Users } from "lucide-react";
 import PageBanner from "@/components/PageBanner";
 import SectionTitle from "@/components/SectionTitle";
 import schoolBuilding from "@/assets/vue-lateral.jpg";
 
-/* PRINCIPES DE BASE
- * Ajoute ici les grandes valeurs ou obligations de l'etablissement.
- * Chaque objet cree une carte dans la section "Principes fondamentaux".
- */
+const preambule = {
+  fr: "Le présent règlement fixe les règles de discipline, de travail et de conduite applicables à tous les élèves. Il vise à garantir un environnement d’excellence, de rigueur et de sécurité. Toute inscription vaut acceptation totale et sans réserve.",
+  en: "These regulations establish the rules of discipline, work, and conduct applicable to all students. They aim to ensure an environment of excellence, rigor, and safety. Enrollment implies full and unconditional acceptance.",
+};
+
 const principes = [
   {
+    icon: Clock3,
+    title: "Assiduité",
+    description: "La présence aux cours, la ponctualité et la régularité dans le travail sont obligatoires.",
+  },
+  {
     icon: BookCheck,
-    title: "Assiduité et travail",
-    description:
-      "Chaque élève est tenu d'assister régulièrement aux cours, d'être ponctuel et de fournir un travail personnel sérieux.",
+    title: "Rigueur académique",
+    description: "Les devoirs, évaluations et obligations scolaires doivent être accomplis avec sérieux.",
   },
   {
     icon: ShieldCheck,
-    title: "Respect et discipline",
-    description:
-      "Le respect des enseignants, du personnel, des camarades et du matériel scolaire est une règle fondamentale de la vie en communauté.",
-  },
-  {
-    icon: Clock3,
-    title: "Ponctualité",
-    description:
-      "Les retards répétés perturbent les apprentissages. Les élèves doivent être présents avant le début effectif des activités.",
+    title: "Discipline",
+    description: "Le respect des règles, de la sécurité et du cadre éducatif est exigé en permanence.",
   },
   {
     icon: Users,
-    title: "Vie collective",
-    description:
-      "Chacun contribue à préserver un climat serein, propre et favorable aux études dans l'enceinte de l'établissement.",
+    title: "Respect mutuel",
+    description: "La courtoisie, la maîtrise de soi et la protection des biens communs sont essentielles.",
   },
 ];
 
-/* CATEGORIES DE REGLES
- * Chaque objet cree un bloc de regles.
- * Pour ajouter une nouvelle categorie, duplique un objet avec :
- * - `title` : titre du bloc
- * - `points` : liste des regles a afficher
- */
-const regles = [
+const articles = [
   {
-    title: "Tenue et présentation",
-    points: [
-      "Le port de la tenue scolaire est obligatoire les jours fixés par l'administration.",
-      "La tenue doit être propre, correcte et conforme aux exigences de l'établissement.",
-      "Les coiffures, accessoires ou attitudes contraires au cadre scolaire sont à éviter.",
+    number: "01",
+    titleFr: "Assiduité et ponctualité",
+    titleEn: "Attendance and Punctuality",
+    fr: [
+      "La présence aux cours et aux activités académiques est obligatoire.",
+      "Tout retard ou absence doit être dûment justifié.",
+      "Les retards répétés constituent une faute disciplinaire.",
+    ],
+    en: [
+      "Attendance at classes and academic activities is compulsory.",
+      "Any lateness or absence must be justified.",
+      "Repeated lateness constitutes a disciplinary offense.",
     ],
   },
   {
-    title: "Comportement en classe",
-    points: [
-      "Le silence, l'écoute et la participation respectueuse sont attendus pendant les cours.",
-      "Toute forme d'insolence, de tricherie, de violence verbale ou physique est interdite.",
-      "L'usage du téléphone ou d'appareils non autorisés en classe est proscrit.",
+    number: "02",
+    titleFr: "Tenue vestimentaire",
+    titleEn: "Dress Code",
+    fr: [
+      "Le port de l’uniforme officiel est obligatoire.",
+      "La tenue doit être propre, décente et conforme aux exigences de l’établissement.",
+    ],
+    en: [
+      "The official uniform is mandatory.",
+      "Students must maintain a clean, decent, and appropriate appearance.",
     ],
   },
   {
-    title: "Protection des biens",
-    points: [
-      "Les salles, laboratoires, toilettes, mobiliers et équipements doivent être utilisés avec soin.",
-      "Tout élève responsable d'une dégradation peut faire l'objet d'une réparation ou d'une sanction.",
-      "Les objets personnels de valeur restent sous la responsabilité de leur propriétaire.",
+    number: "03",
+    titleFr: "Comportement et discipline",
+    titleEn: "Behavior and Discipline",
+    fr: [
+      "Tout élève doit adopter une conduite exemplaire fondée sur le respect, la courtoisie et la maîtrise de soi.",
+      "Tout comportement violent, injurieux ou perturbateur est strictement interdit.",
+    ],
+    en: [
+      "Students must demonstrate exemplary conduct based on respect, courtesy, and self-control.",
+      "Any violent, abusive, or disruptive behavior is strictly prohibited.",
     ],
   },
-];
-
-/* SUIVI EDUCATIF
- * Cette zone sert a presenter les sanctions, mesures d'encadrement
- * ou formes d'encouragement de l'etablissement.
- */
-const sanctionsEtEncouragements = [
   {
-    icon: CircleAlert,
-    title: "Mesures disciplinaires",
-    text: "Selon la gravité des faits, l'établissement peut appliquer un avertissement, une retenue, une convocation des parents, une exclusion temporaire ou toute autre mesure prévue par l'administration.",
+    number: "04",
+    titleFr: "Travail scolaire",
+    titleEn: "Academic Work",
+    fr: [
+      "Les élèves sont tenus d’accomplir leurs devoirs avec rigueur et régularité.",
+      "Le matériel scolaire est obligatoire à chaque cours.",
+    ],
+    en: [
+      "Students must complete their assignments with rigor and consistency.",
+      "Required materials must be brought to every class.",
+    ],
   },
   {
-    icon: BadgeCheck,
-    title: "Encouragements",
-    text: "Les élèves exemplaires par leur conduite, leurs résultats et leur engagement peuvent recevoir des félicitations, tableaux d'honneur ou distinctions officielles.",
+    number: "05",
+    titleFr: "Utilisation des téléphones",
+    titleEn: "Use of Mobile Phones",
+    fr: [
+      "L’usage du téléphone portable est interdit pendant les heures de cours, sauf autorisation expresse.",
+      "Tout appareil utilisé abusivement sera confisqué.",
+    ],
+    en: [
+      "The use of mobile phones is prohibited during class hours unless authorized.",
+      "Any misuse will result in confiscation.",
+    ],
+  },
+  {
+    number: "06",
+    titleFr: "Objets interdits",
+    titleEn: "Prohibited Items",
+    fr: [
+      "Il est strictement interdit d’introduire tout objet dangereux ou perturbateur au sein de l’établissement.",
+    ],
+    en: [
+      "It is strictly forbidden to bring any dangerous or disruptive items into the school.",
+    ],
+  },
+  {
+    number: "07",
+    titleFr: "Respect des biens",
+    titleEn: "Respect for Property",
+    fr: [
+      "Les élèves doivent préserver les infrastructures et le matériel pédagogique.",
+      "Toute dégradation sera sanctionnée et réparée aux frais des responsables légaux.",
+    ],
+    en: [
+      "Students must preserve school facilities and equipment.",
+      "Any damage will be sanctioned and repaired at the expense of parents or guardians.",
+    ],
+  },
+  {
+    number: "08",
+    titleFr: "Santé et sécurité",
+    titleEn: "Health and Safety",
+    fr: [
+      "La consommation d’alcool, de drogues ou de substances illicites est formellement interdite.",
+      "Les consignes de sécurité doivent être respectées en permanence.",
+    ],
+    en: [
+      "The use of alcohol, drugs, or illegal substances is strictly prohibited.",
+      "Safety instructions must be followed at all times.",
+    ],
+  },
+  {
+    number: "09",
+    titleFr: "Règlement des examens",
+    titleEn: "Examination Regulations",
+    fr: [
+      "La présence aux évaluations est obligatoire.",
+      "Tout retard à un examen peut entraîner l’exclusion de l’épreuve.",
+      "Toute fraude (tricherie, communication, usage d’appareil non autorisé) entraîne l’annulation immédiate de l’épreuve.",
+      "Des sanctions disciplinaires supplémentaires peuvent être appliquées.",
+    ],
+    en: [
+      "Attendance at examinations is compulsory.",
+      "Late arrival may result in exclusion from the exam.",
+      "Any cheating (communication, unauthorized devices) leads to immediate cancellation of the test.",
+      "Additional disciplinary sanctions may be applied.",
+    ],
+  },
+  {
+    number: "10",
+    titleFr: "Discipline renforcée",
+    titleEn: "Strict Discipline Policy",
+    fr: [
+      "En cas de faute grave ou répétée, l’élève est soumis à un régime de discipline renforcée.",
+      "Ce régime comprend : surveillance accrue, convocation des parents, engagement écrit de conduite et mesures correctives obligatoires.",
+    ],
+    en: [
+      "In case of serious or repeated misconduct, the student will be placed under strict discipline measures.",
+      "These measures include increased supervision, parent or guardian summons, written commitment to proper conduct, and mandatory corrective actions.",
+    ],
+  },
+  {
+    number: "11",
+    titleFr: "Sanctions disciplinaires",
+    titleEn: "Disciplinary Sanctions",
+    fr: [
+      "Toute violation du présent règlement expose l’élève à des sanctions graduées : avertissement, blâme, retenue, exclusion temporaire ou exclusion définitive.",
+    ],
+    en: [
+      "Any violation of these rules exposes the student to graduated sanctions: warning, reprimand, detention, temporary or permanent exclusion.",
+    ],
+  },
+  {
+    number: "12",
+    titleFr: "Récompenses",
+    titleEn: "Rewards",
+    fr: [
+      "Les élèves disciplinés et performants peuvent recevoir des distinctions : félicitations, tableau d’honneur, prix d’excellence.",
+    ],
+    en: [
+      "Disciplined and high-performing students may receive distinctions: congratulations, honor roll, excellence awards.",
+    ],
+  },
+  {
+    number: "13",
+    titleFr: "Engagement",
+    titleEn: "Commitment",
+    fr: [
+      "L’élève et ses responsables légaux reconnaissent avoir pris connaissance du présent règlement et s’engagent à le respecter strictement.",
+    ],
+    en: [
+      "The student and their guardians acknowledge having read these rules and agree to comply strictly.",
+    ],
   },
 ];
 
 const ReglementInterieur = () => {
   return (
     <>
-      {/* BANNIERE PRINCIPALE
-          Modifier ici le titre, le sous-titre ou l'image de fond si necessaire. */}
       <PageBanner
         title="Règlement intérieur"
-        subtitle="Les règles de vie qui encadrent le travail, la discipline et le respect au sein de l'établissement"
+        subtitle="Internal Rules and Regulations - Collège Bilingue ONASI"
         backgroundImage={schoolBuilding}
       />
 
-      {/* INTRODUCTION
-          Remplace ce texte par la presentation officielle du reglement interieur de l'ecole. */}
       <section className="py-20">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <SectionTitle
-              title="Cadre général"
-              subtitle="Cette page présente une base claire du règlement intérieur. Elle peut être ajustée pour correspondre exactement aux règles officielles de l'école."
-            />
-            <p className="text-muted-foreground leading-relaxed">
-              Le règlement intérieur a pour objectif de garantir un environnement d'apprentissage
-              sérieux, sécurisé et respectueux. Il s'applique à tous les élèves et s'inscrit dans
-              une logique de responsabilité partagée entre l'administration, les enseignants, les
-              parents et les apprenants.
-            </p>
+          <SectionTitle
+            title="Préambule / Preamble"
+            subtitle="Le cadre officiel de discipline, de travail et de conduite applicable à tous les élèves"
+          />
+          <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-border bg-card p-8"
+            >
+              <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                FR
+              </span>
+              <h3 className="mt-4 font-heading text-2xl font-bold text-foreground">Préambule</h3>
+              <p className="mt-4 leading-relaxed text-muted-foreground">{preambule.fr}</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-2xl border border-border bg-primary p-8 text-primary-foreground"
+            >
+              <span className="inline-flex rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
+                EN
+              </span>
+              <h3 className="mt-4 font-heading text-2xl font-bold">Preamble</h3>
+              <p className="mt-4 leading-relaxed text-primary-foreground/85">{preambule.en}</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* PRINCIPES FONDAMENTAUX
-          Cette section affiche automatiquement le contenu du tableau `principes`. */}
       <section className="py-20 bg-card">
         <div className="container">
           <SectionTitle
-            title="Principes fondamentaux"
-            subtitle="Les repères essentiels attendus de chaque élève au quotidien"
+            title="Repères Essentiels"
+            subtitle="Les grands principes qui structurent la vie scolaire au Collège Bilingue ONASI"
           />
           <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
             {principes.map((item, index) => (
@@ -157,84 +282,89 @@ const ReglementInterieur = () => {
         </div>
       </section>
 
-      {/* REGLES DETAILLEES
-          Cette section affiche automatiquement les categories definies dans `regles`.
-          Tu peux y ajouter des blocs comme : discipline, absences, examens, securite, internat, etc. */}
       <section className="py-20">
         <div className="container">
           <SectionTitle
-            title="Règles à respecter"
-            subtitle="Quelques obligations importantes liées à la tenue, au comportement et à la préservation du cadre scolaire"
+            title="Articles Officiels"
+            subtitle="Version bilingue du règlement intérieur de l’établissement"
           />
-          <div className="grid lg:grid-cols-3 gap-6">
-            {regles.map((bloc, index) => (
-              <motion.div
-                key={bloc.title}
+          <div className="grid xl:grid-cols-2 gap-6">
+            {articles.map((article, index) => (
+              <motion.article
+                key={article.number}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-2xl border border-border bg-card p-8"
+                transition={{ delay: index * 0.04 }}
+                className="rounded-3xl border border-border bg-card p-8 shadow-sm"
               >
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-5">{bloc.title}</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  {bloc.points.map((point) => (
-                    <li key={point} className="flex items-start gap-3">
-                      <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-secondary" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-lg font-heading font-bold text-primary-foreground">
+                    {article.number}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                      Article {article.number}
+                    </p>
+                    <h3 className="mt-2 font-heading text-2xl font-bold text-foreground">
+                      {article.titleFr}
+                    </h3>
+                    <p className="mt-1 text-sm font-medium uppercase tracking-wide text-muted-foreground">
+                      {article.titleEn}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid md:grid-cols-2 gap-5">
+                  <div className="rounded-2xl bg-background p-5 border border-border">
+                    <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                      FR
+                    </span>
+                    <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                      {article.fr.map((line) => (
+                        <li key={line} className="flex items-start gap-3">
+                          <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-secondary" />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="rounded-2xl bg-primary/5 p-5 border border-primary/10">
+                    <span className="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary-foreground">
+                      EN
+                    </span>
+                    <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                      {article.en.map((line) => (
+                        <li key={line} className="flex items-start gap-3">
+                          <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-primary" />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SANCTIONS ET ENCOURAGEMENTS
-          Remplace ces textes par les mesures reelles appliquees dans l'etablissement. */}
       <section className="py-20 bg-card">
         <div className="container">
-          <SectionTitle
-            title="Suivi éducatif"
-            subtitle="La discipline scolaire s'accompagne aussi d'un effort de valorisation des bons comportements"
-          />
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {sanctionsEtEncouragements.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="rounded-2xl p-8 border border-border bg-background"
-              >
-                <item.icon className="h-10 w-10 text-primary mb-4" />
-                <h3 className="font-heading text-2xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* MESSAGE FINAL
-          Tu peux remplacer ce bloc par :
-          - une conclusion officielle
-          - une signature de la direction
-          - des informations pour les parents
-          - un lien vers un PDF du reglement complet */}
-      <section className="py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto rounded-3xl bg-primary p-8 md:p-10 text-primary-foreground">
-            <h2 className="font-heading text-3xl font-bold mb-4">Engagement des familles et des élèves</h2>
-            <p className="text-primary-foreground/85 leading-relaxed mb-4">
-              L'inscription à l'école implique l'acceptation du règlement intérieur. Les parents
-              sont invités à accompagner leurs enfants dans le respect des consignes, le suivi du
-              travail scolaire et la communication régulière avec l'administration.
+          <div className="max-w-5xl mx-auto rounded-3xl bg-primary p-8 md:p-10 text-primary-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-foreground/70">
+              Article 13
             </p>
-            <p className="text-primary-foreground/85 leading-relaxed">
-              Si vous le souhaitez, nous pouvons aussi remplacer ce contenu par la version exacte
-              du règlement officiel de l'établissement, article par article.
+            <h2 className="mt-3 font-heading text-3xl font-bold">
+              Engagement / Commitment
+            </h2>
+            <p className="mt-4 leading-relaxed text-primary-foreground/85">
+              L’élève et ses responsables légaux reconnaissent avoir pris connaissance du présent règlement
+              et s’engagent à le respecter strictement.
+            </p>
+            <p className="mt-3 leading-relaxed text-primary-foreground/85">
+              The student and their guardians acknowledge having read these rules and agree to comply strictly.
             </p>
           </div>
         </div>
