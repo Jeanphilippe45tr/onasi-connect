@@ -3,32 +3,24 @@
  * 
  * POUR MODIFIER :
  * - Les enseignants : modifier le tableau `enseignants`
- * - Les photos : placer vos images dans src/assets/ et modifier les imports
+ * - Les photos sont volontairement masquées pour protéger l'identité des enseignants
+ * - Si vous souhaitez réactiver les photos plus tard, voir les commentaires dans `TeacherCard`
  * - Pour ajouter un enseignant : ajouter un objet au tableau
  */
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen } from "lucide-react";
+import { GraduationCap, BookOpen, Shield } from "lucide-react";
 import PageBanner from "@/components/PageBanner";
 import SectionTitle from "@/components/SectionTitle";
 import studentsClassroom from "@/assets/staff.jpg";
-import teacherPhoto1 from "@/assets/teacher1.jpeg";
-import principalPhoto from "@/assets/principal.jpeg";
-import proviseurPhoto from "@/assets/proviseur.jpg";
-import principal2Photo from "@/assets/principal2.jpg";
-import laboPhoto from "@/assets/labo.jpg";
-import courtPhoto from "@/assets/court.jpg";
-import infoPhoto from "@/assets/info.jpg";
-import staffPhoto from "@/assets/staff.jpg";
 
 /**
- * Liste des enseignants - MODIFIER avec les vrais noms, matières, et photos
+ * Liste des enseignants - MODIFIER avec les vrais noms, matières, et informations
  * 
  * Pour chaque enseignant :
  * - nom : Nom complet
  * - matiere : Matière enseignée
  * - diplome : Diplôme obtenu
  * - bio : Courte biographie
- * - photo : (optionnel) Chemin vers la photo, ex: import teacherPhoto from "@/assets/teacher1.jpg"
  * - section : "francophone" ou "anglophone"
  */
 const enseignants = [
@@ -37,7 +29,6 @@ const enseignants = [
     matiere: "Mathématiques",
     diplome: "DIPES II - Université de Yaoundé I",
     bio: "15 ans d'expérience dans l'enseignement des mathématiques. Passionné par la réussite de chaque élève.",
-    photo: teacherPhoto1,
     section: "francophone",
   },
   {
@@ -45,7 +36,6 @@ const enseignants = [
     matiere: "Français / Littérature",
     diplome: "DIPES II - ENS Yaoundé",
     bio: "Spécialiste de la littérature francophone africaine. Prépare les élèves aux épreuves du Baccalauréat.",
-    photo: principalPhoto,
     section: "francophone",
   },
   {
@@ -53,7 +43,6 @@ const enseignants = [
     matiere: "English Language",
     diplome: "B.Ed - University of Buea",
     bio: "Expert in English language teaching with focus on bilingual education and communication skills.",
-    photo: proviseurPhoto,
     section: "anglophone",
   },
   {
@@ -61,7 +50,6 @@ const enseignants = [
     matiere: "Sciences de la Vie et de la Terre",
     diplome: "DIPES I - Université de Douala",
     bio: "Encourage l'apprentissage par l'expérimentation et les travaux pratiques en laboratoire.",
-    photo: laboPhoto,
     section: "francophone",
   },
   {
@@ -69,7 +57,6 @@ const enseignants = [
     matiere: "Physics / Chemistry",
     diplome: "M.Sc - University of Yaoundé I",
     bio: "Combines theoretical knowledge with practical experiments to make science exciting for students.",
-    photo: courtPhoto,
     section: "anglophone",
   },
   {
@@ -77,7 +64,6 @@ const enseignants = [
     matiere: "Histoire-Géographie",
     diplome: "DIPES II - ENS Yaoundé",
     bio: "Passionné par l'histoire du Cameroun et de l'Afrique. Prépare les élèves aux concours.",
-    photo: infoPhoto,
     section: "francophone",
   },
   {
@@ -85,7 +71,6 @@ const enseignants = [
     matiere: "Mathematics",
     diplome: "B.Sc Education - University of Bamenda",
     bio: "Dedicated to making mathematics accessible and enjoyable for anglophone students.",
-    photo: principal2Photo,
     section: "anglophone",
   },
   {
@@ -93,7 +78,6 @@ const enseignants = [
     matiere: "Éducation Physique et Sportive",
     diplome: "CAPEPS - INJS Yaoundé",
     bio: "Ancien athlète national, il transmet la passion du sport et les valeurs d'équipe.",
-    photo: staffPhoto,
     section: "francophone",
   },
 ];
@@ -179,25 +163,33 @@ const TeacherCard = ({ teacher, index }: { teacher: typeof enseignants[0]; index
     className="bg-background rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow"
   >
     {/* 
-      ZONE PHOTO ENSEIGNANT :
-      Pour ajouter une photo, remplacer cette div par :
-      <img src={teacher.photo} alt={teacher.nom} className="h-52 w-full object-cover" />
+      IDENTITE VISUELLE PROTEGEE :
+      Les photos sont masquées à la demande du client pour préserver l'identité des enseignants.
+
+      SI VOUS SOUHAITEZ REACTIVER LES PHOTOS PLUS TARD :
+      1. Ajouter un champ `photo` dans les objets du tableau `enseignants`
+      2. Importer les images en haut du fichier
+      3. Remplacer ce bloc par une balise :
+         <img src={teacher.photo} alt={teacher.nom} className="h-52 w-full object-cover" />
     */}
-    {teacher.photo ? (
-      <img 
-        src={teacher.photo} 
-        alt={teacher.nom} 
-        className="h-52 w-full object-cover" 
-      />
-    ) : (
-      <div className="h-52 bg-muted flex items-center justify-center">
-        <div className="h-20 w-20 rounded-full bg-primary flex items-center justify-center">
+    <div className="h-52 bg-muted/60 flex items-center justify-center border-b border-border">
+      <div className="flex flex-col items-center gap-3 text-center px-6">
+        <div className="h-20 w-20 rounded-full bg-primary flex items-center justify-center shadow-sm">
           <span className="text-2xl font-heading font-bold text-primary-foreground">
-            {teacher.nom.split(" ").pop()?.charAt(0)}
+            {teacher.nom
+              .split(" ")
+              .filter(Boolean)
+              .slice(-2)
+              .map((part) => part.charAt(0))
+              .join("")}
           </span>
         </div>
+        <div className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-1 text-xs font-medium text-muted-foreground border border-border">
+          <Shield className="h-3.5 w-3.5 text-primary" />
+          Identité visuelle protégée
+        </div>
       </div>
-    )}
+    </div>
     <div className="p-5">
       <h3 className="font-heading font-bold text-foreground">{teacher.nom}</h3>
       <p className="text-sm font-semibold text-primary mt-1">{teacher.matiere}</p>
