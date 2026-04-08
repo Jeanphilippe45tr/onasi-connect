@@ -8,7 +8,6 @@
  */
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, BookOpen, Shield, Handshake } from "lucide-react";
-import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -17,7 +16,70 @@ import schoolBuilding from "@/assets/vue-lateral.jpg";
 import proviseurImg from "@/assets/principal2.jpg";
 import heroSchool from "@/assets/école-haut.jpg";
 import principal from "@/assets/principal.jpeg";
+import staff1 from "@/assets/staff.jpg";
 /* ====================================== */
+
+/**
+ * GALERIES PHOTOS - POUR AJOUTER OU CHANGER UNE IMAGE :
+ * 1. Importer la nouvelle image en haut du fichier
+ * 2. Remplacer `image:` par votre import
+ * 3. Modifier le `title` et le `description`
+ *
+ * Exemple :
+ * { image: maNouvellePhoto, title: "Laboratoire", description: "Travaux pratiques des élèves" }
+ */
+const galerieSections = [
+  {
+    title: "Le Campus",
+    subtitle: "Les espaces qui accueillent les élèves au quotidien",
+    images: [
+      {
+        image: heroSchool,
+        title: "Vue générale de l'établissement",
+        description: "Une photo principale du collège pour présenter le cadre global.",
+      },
+      {
+        image: schoolBuilding,
+        title: "Bâtiments et accès",
+        description: "Ajoutez ici une image de la cour ou des bâtiments administratifs.",
+      },
+    ],
+  },
+
+  {
+    title: "Vie scolaire",
+    subtitle: "Les moments qui montrent l'encadrement et l'ambiance de l'école",
+    images: [
+      {
+        image: proviseurImg,
+        title: "Encadrement des élèves",
+        description: "Une photo d'activité, d'accompagnement ou de rassemblement scolaire.",
+      },
+      {
+        image: principal,
+        title: "Direction et accueil",
+        description: "Une image du personnel administratif ou d'un moment officiel.",
+      },
+    ],
+  },
+
+  {
+    title: "Staff",
+    subtitle: "Nos valeureux soldats de l'éducation",
+    images: [
+      {
+        image: staff1,
+        title: "Encadrement des élèves",
+        description: "Une photo d'activité, d'accompagnement ou de rassemblement scolaire.",
+      },
+      {
+        image: principal,
+        title: "Direction et accueil",
+        description: "Une image du personnel administratif ou d'un moment officiel.",
+      },
+    ],
+  },
+];
 
 /** Valeurs de l'établissement - MODIFIER selon vos valeurs */
 const valeurs = [
@@ -151,18 +213,34 @@ const APropos = () => {
               <SectionTitle title="Mot du Proviseur" centered={false} />
               <div className="space-y-4 text-muted-foreground leading-relaxed italic">
                 <p>
-                  « Chers parents, chers élèves, chers partenaires de l'éducation,
+                  « Chers parents, chers élèves, bienvenue au Collège ONASI. Notre établissement
+                  bilingue est un lieu où l'excellence académique rencontre les valeurs humaines.
                 </p>
                 <p>
-                  C'est avec une grande fierté que je vous présente le Collège ONASI. Notre établissement
-                  est le fruit d'une vision ambitieuse : offrir aux jeunes d'Ebolowa et de sa région
-                  une éducation de classe mondiale, dans un cadre bilingue qui les prépare à évoluer
-                  dans un monde globalisé.
-                </p>
-                <p>
-                  Chaque jour, notre équipe d'enseignants dévoués travaille pour que chaque élève
-                  atteigne son plein potentiel. Nous croyons fermement que chaque enfant est porteur
-                  d'un talent unique qu'il nous revient de révéler et de cultiver. »
+                  Le Collège Bilingue ONASI, situé dans la ville d’Ebolowa (Cameroun), a été fondé avec <br />
+                  la vision selon laquelle l’excellence n’est pas une option. C’est une obligation.
+
+                  Nous croyons sincèrement que, parce que votre enfant mérite mieux, il fallait lui offrir <br />
+                  une institution sérieuse qui construit son avenir.
+
+                  Chers parents, vous qui avez choisi de dire :
+                  « Stop aux écoles ordinaires », pour répondre à vos attentes, le Collège Bilingue ONASI dispose : <br />
+                  
+                  - d’une section francophone (de la 6e en Tle) <br />
+                  - d’une section anglophone premium (Form 1 à Upper 6)
+
+                  • Laboratoire moderne<br />
+                  • Approche pratique et expérimentale <br />
+                  • Encadrement par des professeurs expatriés américains <br />
+                  • Ici, la science ne s’apprend pas seulement, elle se pratique <br />
+
+                  Un environnement qui inspire la réussite :<br />
+                  • Espaces verts aménagés<br />
+                  • Discipline ferme et structurée<br />
+                  • Suivi pédagogique personnalisé<br />
+                  • Effectifs contrôlés<br />
+
+                  15 diplômes aux examens officiels (2013 - 2025)
                 </p>
               </div>
               <p className="mt-6 font-heading font-bold text-foreground">M. / Mme Onana Messi Blaise</p>
@@ -208,22 +286,86 @@ const APropos = () => {
         </div>
       </section>
 
+      {/* Guide rapide */}
+      {/*
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container">
+          <div className="max-w-4xl mx-auto rounded-3xl border border-primary-foreground/15 bg-primary-foreground/10 p-8 md:p-10">
+            <SectionTitle
+              title="Comment changer les photos facilement"
+              subtitle="Tout est préparé pour que vous puissiez mettre les vraies images de l'école sans difficulté."
+            />
+            <div className="grid md:grid-cols-3 gap-4 text-sm md:text-base">
+              <div className="rounded-2xl bg-primary-foreground/10 p-5">
+                <p className="font-heading font-bold mb-2">1. Ajouter l'image</p>
+                <p className="text-primary-foreground/85">
+                  Placez votre photo dans <code>src/assets/</code>.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-primary-foreground/10 p-5">
+                <p className="font-heading font-bold mb-2">2. Modifier l'import</p>
+                <p className="text-primary-foreground/85">
+                  Remplacez un import existant en haut de cette page.
+                </p>
+              </div>
+              <div className="rounded-2xl bg-primary-foreground/10 p-5">
+                <p className="font-heading font-bold mb-2">3. Mettre le texte</p>
+                <p className="text-primary-foreground/85">
+                  Changez seulement le titre et la description dans <code>galerieSections</code>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        */}
       {/* Photos de l'école */}
       <section className="py-20 bg-card">
         <div className="container">
-          <SectionTitle title="Notre École en Images" subtitle="Découvrez le cadre de vie au Collège ONASI" />
-          {/* REMPLACER ces images par les vraies photos de l'école */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[heroSchool, schoolBuilding, proviseurImg].map((img, i) => (
+          <SectionTitle
+            title="Notre École en Images"
+            subtitle="Découvrez les espaces, les activités et l'ambiance qui font la richesse de notre établissement"
+          />
+
+          <div className="space-y-12">
+            {galerieSections.map((section, sectionIndex) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={section.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-xl overflow-hidden aspect-video"
+                transition={{ delay: sectionIndex * 0.1 }}
+                className="rounded-3xl border border-border bg-background p-6 md:p-8"
               >
-                <img src={img} alt={`Photo école ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <div className="mb-6">
+                  <h3 className="text-2xl font-heading font-bold text-foreground">{section.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{section.subtitle}</p>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  {section.images.map((item, imageIndex) => (
+                    <motion.article
+                      key={`${section.title}-${imageIndex}`}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: imageIndex * 0.08 }}
+                      className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+                    >
+                      <div className="aspect-[16/10] overflow-hidden bg-muted">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <h4 className="font-heading text-lg font-bold text-foreground">{item.title}</h4>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                      </div>
+                    </motion.article>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>
