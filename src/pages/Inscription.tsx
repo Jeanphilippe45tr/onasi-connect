@@ -2,7 +2,7 @@
  * PAGE INSCRIPTION EN LIGNE - Collège ONASI
  * 
  * Ce formulaire est statique (pas de backend).
- * Pour le rendre fonctionnel, connecter à Lovable Cloud.
+ * Pour le rendre fonctionnel, connecter à un service backend.
  * 
  * POUR MODIFIER :
  * - Les champs du formulaire : modifier le JSX ci-dessous
@@ -44,7 +44,7 @@ const Inscription = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulation d'envoi - REMPLACER par une vraie logique avec Lovable Cloud
+    // Simulation d'envoi - REMPLACER par une vraie logique backend
     const dossierNum = `ONASI-${Date.now().toString().slice(-6)}`;
     setSubmitted(true);
     toast({
