@@ -8,6 +8,181 @@
  */
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, BookOpen, Shield, Handshake } from "lucide-react";
+<<<<<<< HEAD
+import PageBanner from "@/components/PageBanner";
+import SectionTitle from "@/components/SectionTitle";
+
+/* ========= IMAGES ========= */
+import schoolBuilding from "@/assets/vue-lateral.jpg";
+import proviseurImg from "@/assets/principal2.jpg";
+import heroSchool from "@/assets/ecole-haut.jpg";
+import principal from "@/assets/principal.jpeg";
+import staff1 from "@/assets/staff.jpg";
+
+// Galerie — Campus
+import galleryCampusWide from "@/assets/gallery-campus-wide.jpg";
+import galleryBuildingSign from "@/assets/gallery-building-sign.jpg";
+import galleryFlagBuilding from "@/assets/gallery-flag-building.jpg";
+import gallerySchoolYard from "@/assets/gallery-school-yard.jpg";
+import galleryCampusFront from "@/assets/gallery-campus-front.jpg";
+
+// Galerie — Vie scolaire
+import galleryCorridor from "@/assets/gallery-corridor.jpg";
+import galleryComputerLab from "@/assets/gallery-computer-lab.jpg";
+import galleryScienceLab from "@/assets/gallery-science-lab.jpg";
+import galleryTeacherStudents from "@/assets/gallery-teacher-students.jpg";
+
+// Galerie — Sport & Activités
+import galleryFootballTeam from "@/assets/gallery-football-team.jpg";
+
+// Galerie — Cérémonies & Reconnaissance
+import galleryAwardCeremony from "@/assets/gallery-award-ceremony.jpg";
+import galleryCertificate from "@/assets/gallery-certificate.jpg";
+import galleryRecognition from "@/assets/gallery-recognition.jpg";
+import galleryOfficialEvent from "@/assets/gallery-official-event.jpg";
+
+// Galerie — Équipe
+import galleryStaffGroup from "@/assets/gallery-staff-group.jpg";
+import galleryResearchTeam from "@/assets/gallery-research-team.jpg";
+import galleryAdminConf from "@/assets/gallery-admin-conf.jpg";
+import galleryDirectorOffice from "@/assets/gallery-director-office.jpg";
+import galleryAdminPortrait from "@/assets/gallery-admin-portrait.jpg";
+/* ====================================== */
+
+const galerieSections = [
+  {
+    title: "Le Campus",
+    subtitle: "Les espaces qui accueillent les élèves au quotidien",
+    images: [
+      {
+        image: galleryBuildingSign,
+        title: "Collège Bilingue ONASI",
+        description: "Le bâtiment principal arbore fièrement les deux dénominations — française et anglaise — reflet de notre identité bilingue. Devise : Détermination · Travail · Succès.",
+      },
+      {
+        image: galleryCampusWide,
+        title: "Vue d'ensemble du campus",
+        description: "Un campus spacieux avec une grande cour, des bâtiments à deux niveaux et un environnement verdoyant propice à l'apprentissage.",
+      },
+      {
+        image: galleryFlagBuilding,
+        title: "Drapeau national et bâtiments",
+        description: "Le drapeau camerounais flotte au cœur du campus, symbole de fierté nationale et d'appartenance à la communauté éducative du pays.",
+      },
+      {
+        image: gallerySchoolYard,
+        title: "La cour de l'établissement",
+        description: "Les élèves se retrouvent dans la cour entre les cours, un espace de socialisation et de détente qui rythme la vie scolaire quotidienne.",
+      },
+      {
+        image: galleryCampusFront,
+        title: "Façade principale",
+        description: "La façade du Collège Bilingue ONASI, avec ses arcades caractéristiques et ses deux niveaux, accueille chaque matin des centaines d'élèves déterminés.",
+      },
+    ],
+  },
+
+  {
+    title: "Vie Scolaire",
+    subtitle: "Au cœur de l'apprentissage — les espaces et moments qui forgent l'excellence",
+    images: [
+      {
+        image: galleryCorridor,
+        title: "Couloirs et transitions",
+        description: "Entre deux cours, les élèves échangent dans les couloirs de l'établissement, sous le regard du drapeau camerounais qui rappelle leurs responsabilités envers la nation.",
+      },
+      {
+        image: galleryComputerLab,
+        title: "Salle informatique",
+        description: "Les élèves travaillent en salle informatique sous la supervision d'un enseignant. L'accès aux technologies numériques fait partie intégrante du cursus d'ONASI.",
+      },
+      {
+        image: galleryScienceLab,
+        title: "Travaux pratiques au laboratoire",
+        description: "Une élève utilise un microscope lors d'une séance de travaux pratiques. Le laboratoire équipé d'ONASI permet aux élèves d'apprendre la science par l'expérience.",
+      },
+      {
+        image: galleryTeacherStudents,
+        title: "Encadrement pédagogique",
+        description: "Un enseignant supervise un groupe d'élèves à l'extérieur du bâtiment principal. L'accompagnement personnalisé est une priorité du corps enseignant d'ONASI.",
+      },
+    ],
+  },
+
+  {
+    title: "Sport & Activités",
+    subtitle: "Le développement de l'élève passe aussi par le sport et l'épanouissement physique",
+    images: [
+      {
+        image: galleryFootballTeam,
+        title: "Équipe de football du collège",
+        description: "L'équipe de football pose fièrement avant un match officiel. Le sport est encouragé à ONASI comme vecteur de discipline, d'esprit d'équipe et de dépassement de soi.",
+      },
+    ],
+  },
+
+  {
+    title: "Cérémonies & Reconnaissances",
+    subtitle: "Nos élèves et enseignants honorés pour leur excellence et leur engagement",
+    images: [
+      {
+        image: galleryAwardCeremony,
+        title: "Remise de certificats d'appréciation",
+        description: "Deux élèves reçoivent leurs certificats d'appréciation lors d'une cérémonie officielle. Ces distinctions récompensent le mérite scolaire et l'implication des élèves.",
+      },
+      {
+        image: galleryCertificate,
+        title: "Distinction du corps enseignant",
+        description: "Un enseignant et ses collègues posent avec un certificat d'appréciation décerné en reconnaissance de leur dévouement et de leur contribution à l'éducation.",
+      },
+      {
+        image: galleryRecognition,
+        title: "Diplôme de reconnaissance",
+        description: "Un membre de l'équipe pédagogique reçoit un diplôme de reconnaissance lors d'une cérémonie en plein air, entouré de collègues et partenaires.",
+      },
+      {
+        image: galleryOfficialEvent,
+        title: "Événement officiel — remise de trophée",
+        description: "Lors d'une cérémonie institutionnelle, deux personnalités procèdent à une remise de distinction, en présence d'officiels assis à la tribune.",
+      },
+    ],
+  },
+
+  {
+    title: "Notre Équipe",
+    subtitle: "Les hommes et femmes qui font vivre le Collège ONASI chaque jour",
+    images: [
+      {
+        image: galleryStaffGroup,
+        title: "Photo de groupe — équipe pédagogique",
+        description: "L'équipe pédagogique et administrative réunie pour une photo de groupe. La cohésion de notre équipe est l'un des piliers de la réussite des élèves d'ONASI.",
+      },
+      {
+        image: galleryResearchTeam,
+        title: "Chercheurs et encadrants scientifiques",
+        description: "Des membres de l'équipe scientifique en blouses blanches devant le collège, illustrant l'engagement d'ONASI pour une pédagogie pratique et expérimentale.",
+      },
+      {
+        image: galleryAdminConf,
+        title: "Participation à une conférence",
+        description: "Un cadre du collège représente ONASI lors d'une conférence éducative, affirmant notre présence active dans les réseaux académiques régionaux et nationaux.",
+      },
+      {
+        image: galleryDirectorOffice,
+        title: "Le directeur en plein travail",
+        description: "Le directeur de l'établissement à son bureau, dans une posture qui incarne le sérieux et le dévouement qui caractérisent l'administration du Collège ONASI.",
+      },
+      {
+        image: galleryAdminPortrait,
+        title: "Membre de l'administration",
+        description: "Portrait d'un membre de l'équipe administrative, le sourire en témoignage d'une ambiance de travail positive et d'un engagement sincère pour la réussite des élèves.",
+      },
+    ],
+  },
+];
+
+=======
+import Layout from "@/components/Layout";
 import PageBanner from "@/components/PageBanner";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -16,71 +191,9 @@ import schoolBuilding from "@/assets/vue-lateral.jpg";
 import proviseurImg from "@/assets/principal2.jpg";
 import heroSchool from "@/assets/école-haut.jpg";
 import principal from "@/assets/principal.jpeg";
-import staff1 from "@/assets/staff.jpg";
 /* ====================================== */
 
-/**
- * GALERIES PHOTOS - POUR AJOUTER OU CHANGER UNE IMAGE :
- * 1. Importer la nouvelle image en haut du fichier
- * 2. Remplacer `image:` par votre import
- * 3. Modifier le `title` et le `description`
- *
- * Exemple :
- * { image: maNouvellePhoto, title: "Laboratoire", description: "Travaux pratiques des élèves" }
- */
-const galerieSections = [
-  {
-    title: "Le Campus",
-    subtitle: "Les espaces qui accueillent les élèves au quotidien",
-    images: [
-      {
-        image: heroSchool,
-        title: "Vue générale de l'établissement",
-        description: "Une photo principale du collège pour présenter le cadre global.",
-      },
-      {
-        image: schoolBuilding,
-        title: "Bâtiments et accès",
-        description: "Ajoutez ici une image de la cour ou des bâtiments administratifs.",
-      },
-    ],
-  },
-
-  {
-    title: "Vie scolaire",
-    subtitle: "Les moments qui montrent l'encadrement et l'ambiance de l'école",
-    images: [
-      {
-        image: proviseurImg,
-        title: "Encadrement des élèves",
-        description: "Une photo d'activité, d'accompagnement ou de rassemblement scolaire.",
-      },
-      {
-        image: principal,
-        title: "Direction et accueil",
-        description: "Une image du personnel administratif ou d'un moment officiel.",
-      },
-    ],
-  },
-
-  {
-    title: "Staff",
-    subtitle: "Nos valeureux soldats de l'éducation",
-    images: [
-      {
-        image: staff1,
-        title: "Encadrement des élèves",
-        description: "Une photo d'activité, d'accompagnement ou de rassemblement scolaire.",
-      },
-      {
-        image: principal,
-        title: "Direction et accueil",
-        description: "Une image du personnel administratif ou d'un moment officiel.",
-      },
-    ],
-  },
-];
-
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
 /** Valeurs de l'établissement - MODIFIER selon vos valeurs */
 const valeurs = [
   { icon: BookOpen, title: "Excellence", description: "Nous visons l'excellence dans l'enseignement et l'apprentissage." },
@@ -213,6 +326,7 @@ const APropos = () => {
               <SectionTitle title="Mot du Proviseur" centered={false} />
               <div className="space-y-4 text-muted-foreground leading-relaxed italic">
                 <p>
+<<<<<<< HEAD
                   « Chers parents, chers élèves, bienvenue au Collège ONASI. Notre établissement
                   bilingue est un lieu où l'excellence académique rencontre les valeurs humaines.
                 </p>
@@ -241,6 +355,20 @@ const APropos = () => {
                   • Effectifs contrôlés<br />
 
                   15 diplômes aux examens officiels (2013 - 2025)
+=======
+                  « Chers parents, chers élèves, chers partenaires de l'éducation,
+                </p>
+                <p>
+                  C'est avec une grande fierté que je vous présente le Collège ONASI. Notre établissement
+                  est le fruit d'une vision ambitieuse : offrir aux jeunes d'Ebolowa et de sa région
+                  une éducation de classe mondiale, dans un cadre bilingue qui les prépare à évoluer
+                  dans un monde globalisé.
+                </p>
+                <p>
+                  Chaque jour, notre équipe d'enseignants dévoués travaille pour que chaque élève
+                  atteigne son plein potentiel. Nous croyons fermement que chaque enfant est porteur
+                  d'un talent unique qu'il nous revient de révéler et de cultiver. »
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
                 </p>
               </div>
               <p className="mt-6 font-heading font-bold text-foreground">M. / Mme Onana Messi Blaise</p>
@@ -286,6 +414,7 @@ const APropos = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Guide rapide */}
       {/*
       <section className="py-16 bg-primary text-primary-foreground">
@@ -342,7 +471,7 @@ const APropos = () => {
                   <p className="mt-2 text-muted-foreground">{section.subtitle}</p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {section.images.map((item, imageIndex) => (
                     <motion.article
                       key={`${section.title}-${imageIndex}`}
@@ -366,6 +495,24 @@ const APropos = () => {
                     </motion.article>
                   ))}
                 </div>
+=======
+      {/* Photos de l'école */}
+      <section className="py-20 bg-card">
+        <div className="container">
+          <SectionTitle title="Notre École en Images" subtitle="Découvrez le cadre de vie au Collège ONASI" />
+          {/* REMPLACER ces images par les vraies photos de l'école */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[heroSchool, schoolBuilding, proviseurImg].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="rounded-xl overflow-hidden aspect-video"
+              >
+                <img src={img} alt={`Photo école ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
               </motion.div>
             ))}
           </div>
