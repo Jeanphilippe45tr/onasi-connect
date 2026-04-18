@@ -10,7 +10,10 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+<<<<<<< HEAD
 import logo from "@/assets/logo-onasi.png";
+=======
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
 
 const navLinks = [
   { to: "/", label: "Accueil" },
@@ -19,7 +22,10 @@ const navLinks = [
   { to: "/formations", label: "Formations" },
   { to: "/actualites", label: "Actualités" },
   { to: "/evenements", label: "Événements" },
+<<<<<<< HEAD
   { to: "/certificats", label: "Certificats" },
+=======
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
   { to: "/reglement-interieur", label: "Règlement intérieur" },
   { to: "/inscription", label: "Inscription" },
   { to: "/contact", label: "Contact" },
@@ -46,11 +52,24 @@ const Header = () => {
       <div className="container flex items-center justify-between py-3">
         {/* Logo / Nom */}
         <Link to="/" className="flex items-center gap-2">
+<<<<<<< HEAD
           <img
             src={logo}
             alt="Collège Bilingue ONASI"
             className="h-14 w-auto object-contain"
           />
+=======
+          {/* 
+            POUR AJOUTER UN LOGO : 
+            1. Placer votre image dans src/assets/logo-onasi.png
+            2. import logo from "@/assets/logo-onasi.png";
+            3. Ajouter <img src={logo} alt="ONASI" className="h-10" /> ici
+          */}
+          <div className="flex flex-col">
+            <span className="text-2xl font-heading font-bold text-primary tracking-tight">ONASI</span>
+            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Collège Bilingue</span>
+          </div>
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
         </Link>
 
         {/* Navigation Desktop */}

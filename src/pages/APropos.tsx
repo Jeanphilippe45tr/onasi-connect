@@ -8,6 +8,7 @@
  */
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, BookOpen, Shield, Handshake } from "lucide-react";
+<<<<<<< HEAD
 import PageBanner from "@/components/PageBanner";
 import SectionTitle from "@/components/SectionTitle";
 
@@ -180,6 +181,19 @@ const galerieSections = [
   },
 ];
 
+=======
+import Layout from "@/components/Layout";
+import PageBanner from "@/components/PageBanner";
+import SectionTitle from "@/components/SectionTitle";
+
+/* ========= IMAGES À REMPLACER ========= */
+import schoolBuilding from "@/assets/vue-lateral.jpg";
+import proviseurImg from "@/assets/principal2.jpg";
+import heroSchool from "@/assets/école-haut.jpg";
+import principal from "@/assets/principal.jpeg";
+/* ====================================== */
+
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
 /** Valeurs de l'établissement - MODIFIER selon vos valeurs */
 const valeurs = [
   { icon: BookOpen, title: "Excellence", description: "Nous visons l'excellence dans l'enseignement et l'apprentissage." },
@@ -312,6 +326,7 @@ const APropos = () => {
               <SectionTitle title="Mot du Proviseur" centered={false} />
               <div className="space-y-4 text-muted-foreground leading-relaxed italic">
                 <p>
+<<<<<<< HEAD
                   « Chers parents, chers élèves, bienvenue au Collège ONASI. Notre établissement
                   bilingue est un lieu où l'excellence académique rencontre les valeurs humaines.
                 </p>
@@ -340,6 +355,20 @@ const APropos = () => {
                   • Effectifs contrôlés<br />
 
                   15 diplômes aux examens officiels (2013 - 2025)
+=======
+                  « Chers parents, chers élèves, chers partenaires de l'éducation,
+                </p>
+                <p>
+                  C'est avec une grande fierté que je vous présente le Collège ONASI. Notre établissement
+                  est le fruit d'une vision ambitieuse : offrir aux jeunes d'Ebolowa et de sa région
+                  une éducation de classe mondiale, dans un cadre bilingue qui les prépare à évoluer
+                  dans un monde globalisé.
+                </p>
+                <p>
+                  Chaque jour, notre équipe d'enseignants dévoués travaille pour que chaque élève
+                  atteigne son plein potentiel. Nous croyons fermement que chaque enfant est porteur
+                  d'un talent unique qu'il nous revient de révéler et de cultiver. »
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
                 </p>
               </div>
               <p className="mt-6 font-heading font-bold text-foreground">M. / Mme Onana Messi Blaise</p>
@@ -385,6 +414,7 @@ const APropos = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Guide rapide */}
       {/*
       <section className="py-16 bg-primary text-primary-foreground">
@@ -465,6 +495,24 @@ const APropos = () => {
                     </motion.article>
                   ))}
                 </div>
+=======
+      {/* Photos de l'école */}
+      <section className="py-20 bg-card">
+        <div className="container">
+          <SectionTitle title="Notre École en Images" subtitle="Découvrez le cadre de vie au Collège ONASI" />
+          {/* REMPLACER ces images par les vraies photos de l'école */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[heroSchool, schoolBuilding, proviseurImg].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="rounded-xl overflow-hidden aspect-video"
+              >
+                <img src={img} alt={`Photo école ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
               </motion.div>
             ))}
           </div>

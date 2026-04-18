@@ -17,7 +17,10 @@ import Evenements from "./pages/Evenements";
 import Inscription from "./pages/Inscription";
 import Contact from "./pages/Contact";
 import ReglementInterieur from "./pages/ReglementInterieur";
+<<<<<<< HEAD
 import Certificats from "./pages/Certificats";
+=======
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,7 +40,10 @@ const App = () => (
             <Route path="/actualites" element={<Actualites />} />
             <Route path="/evenements" element={<Evenements />} />
             <Route path="/reglement-interieur" element={<ReglementInterieur />} />
+<<<<<<< HEAD
             <Route path="/certificats" element={<Certificats />} />
+=======
+>>>>>>> 0485df8c925956e933ef2171290045b2058e2558
             <Route path="/inscription" element={<Inscription />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
