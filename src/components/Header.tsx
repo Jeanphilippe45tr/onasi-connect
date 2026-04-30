@@ -1,19 +1,11 @@
 /**
  * Header / Navigation principale du site ONASI
- * 
- * Pour modifier le logo : remplacer le texte "ONASI" par une balise <img>
- * avec votre logo, par exemple :
- *   import logo from "@/assets/logo-onasi.png";
- *   <img src={logo} alt="ONASI" className="h-12" />
  */
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-<<<<<<< HEAD
 import logo from "@/assets/logo-onasi.png";
-=======
->>>>>>> 0485df8c925956e933ef2171290045b2058e2558
 
 const navLinks = [
   { to: "/", label: "Accueil" },
@@ -22,10 +14,7 @@ const navLinks = [
   { to: "/formations", label: "Formations" },
   { to: "/actualites", label: "Actualités" },
   { to: "/evenements", label: "Événements" },
-<<<<<<< HEAD
   { to: "/certificats", label: "Certificats" },
-=======
->>>>>>> 0485df8c925956e933ef2171290045b2058e2558
   { to: "/reglement-interieur", label: "Règlement intérieur" },
   { to: "/inscription", label: "Inscription" },
   { to: "/contact", label: "Contact" },
@@ -43,33 +32,19 @@ const Header = () => {
           <span className="hidden sm:inline">🎓 Établissement bilingue d'excellence — Ebolowa, Cameroun</span>
           <a href="tel:+237674341867" className="flex items-center gap-1 hover:opacity-80">
             <Phone className="h-3 w-3" />
-            {/* REMPLACER par le vrai numéro */}
             +237 674 341 867
           </a>
         </div>
       </div>
 
       <div className="container flex items-center justify-between py-3">
-        {/* Logo / Nom */}
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-<<<<<<< HEAD
           <img
             src={logo}
             alt="Collège Bilingue ONASI"
             className="h-14 w-auto object-contain"
           />
-=======
-          {/* 
-            POUR AJOUTER UN LOGO : 
-            1. Placer votre image dans src/assets/logo-onasi.png
-            2. import logo from "@/assets/logo-onasi.png";
-            3. Ajouter <img src={logo} alt="ONASI" className="h-10" /> ici
-          */}
-          <div className="flex flex-col">
-            <span className="text-2xl font-heading font-bold text-primary tracking-tight">ONASI</span>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Collège Bilingue</span>
-          </div>
->>>>>>> 0485df8c925956e933ef2171290045b2058e2558
         </Link>
 
         {/* Navigation Desktop */}
